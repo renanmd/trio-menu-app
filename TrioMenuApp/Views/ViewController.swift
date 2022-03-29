@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     @IBOutlet weak var viewLogoShadow: UIView!
@@ -13,9 +14,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchMenu()
         self.viewLogoShadow.dropShadow()
     }
 
+    func fetchMenu() {
+        let request = AF.request("https://mcdonalds.trio.dev/menu")
+        
+        request.responseDecodable(of: Menus.self) { (response) in
+            guard let menus = response.value else { return }
+            print(menus.menus)
+        }
+    }
 
 }
 
