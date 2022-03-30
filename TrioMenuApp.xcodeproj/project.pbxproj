@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		32DB387C27F3240C0033C3FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB387B27F3240C0033C3FA /* AppDelegate.swift */; };
 		32DB387E27F3240C0033C3FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB387D27F3240C0033C3FA /* SceneDelegate.swift */; };
-		32DB388027F3240C0033C3FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB387F27F3240C0033C3FA /* ViewController.swift */; };
+		32DB388027F3240C0033C3FA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB387F27F3240C0033C3FA /* MenuViewController.swift */; };
 		32DB388327F3240C0033C3FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DB388127F3240C0033C3FA /* Main.storyboard */; };
 		32DB388527F3240E0033C3FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DB388427F3240E0033C3FA /* Assets.xcassets */; };
 		32DB388827F3240E0033C3FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DB388627F3240E0033C3FA /* LaunchScreen.storyboard */; };
@@ -18,10 +18,10 @@
 		32DB389427F3301A0033C3FA /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB389327F3301A0033C3FA /* Menus.swift */; };
 		32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389827F4780B0033C3FA /* Inter-Bold.ttf */; };
 		32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389927F4780B0033C3FA /* Inter-Regular.ttf */; };
-		32DB38A227F4C5420033C3FA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */; };
-		32DB38A327F4C5420033C3FA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */; };
-		32DB38A627F4C6010033C3FA /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */; };
-		32DB38A727F4C6010033C3FA /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */; };
+		32DB38A227F4C5420033C3FA /* MenuItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A027F4C5420033C3FA /* MenuItemCollectionViewCell.swift */; };
+		32DB38A327F4C5420033C3FA /* MenuItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A127F4C5420033C3FA /* MenuItemCollectionViewCell.xib */; };
+		32DB38A627F4C6010033C3FA /* MenuSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A427F4C6010033C3FA /* MenuSectionTableViewCell.swift */; };
+		32DB38A727F4C6010033C3FA /* MenuSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */; };
 		539FB5B785B7DF336254AE88 /* Pods_TrioMenuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FC941ED9274A8C94F92BFF /* Pods_TrioMenuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,7 @@
 		32DB387827F3240C0033C3FA /* TrioMenuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrioMenuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DB387B27F3240C0033C3FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32DB387D27F3240C0033C3FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		32DB387F27F3240C0033C3FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32DB387F27F3240C0033C3FA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		32DB388227F3240C0033C3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32DB388427F3240E0033C3FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DB388727F3240E0033C3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,10 +41,10 @@
 		32DB389327F3301A0033C3FA /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
 		32DB389827F4780B0033C3FA /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		32DB389927F4780B0033C3FA /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
-		32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
-		32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		32DB38A027F4C5420033C3FA /* MenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		32DB38A127F4C5420033C3FA /* MenuItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		32DB38A427F4C6010033C3FA /* MenuSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionTableViewCell.swift; sourceTree = "<group>"; };
+		32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionTableViewCell.xib; sourceTree = "<group>"; };
 		EED0ACF81ABEF2E083568B05 /* Pods-TrioMenuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrioMenuApp.release.xcconfig"; path = "Target Support Files/Pods-TrioMenuApp/Pods-TrioMenuApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,12 +114,12 @@
 		32DB389627F36CFB0033C3FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32DB387F27F3240C0033C3FA /* ViewController.swift */,
+				32DB387F27F3240C0033C3FA /* MenuViewController.swift */,
 				32DB388127F3240C0033C3FA /* Main.storyboard */,
-				32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */,
-				32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */,
-				32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */,
-				32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */,
+				32DB38A427F4C6010033C3FA /* MenuSectionTableViewCell.swift */,
+				32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */,
+				32DB38A027F4C5420033C3FA /* MenuItemCollectionViewCell.swift */,
+				32DB38A127F4C5420033C3FA /* MenuItemCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,9 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DB38A727F4C6010033C3FA /* CollectionTableViewCell.xib in Resources */,
+				32DB38A727F4C6010033C3FA /* MenuSectionTableViewCell.xib in Resources */,
 				32DB388827F3240E0033C3FA /* LaunchScreen.storyboard in Resources */,
-				32DB38A327F4C5420033C3FA /* CollectionViewCell.xib in Resources */,
+				32DB38A327F4C5420033C3FA /* MenuItemCollectionViewCell.xib in Resources */,
 				32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */,
 				32DB388527F3240E0033C3FA /* Assets.xcassets in Resources */,
 				32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */,
@@ -262,13 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DB389027F32D9C0033C3FA /* Item.swift in Sources */,
-				32DB388027F3240C0033C3FA /* ViewController.swift in Sources */,
-				32DB38A227F4C5420033C3FA /* CollectionViewCell.swift in Sources */,
+				32DB388027F3240C0033C3FA /* MenuViewController.swift in Sources */,
+				32DB38A227F4C5420033C3FA /* MenuItemCollectionViewCell.swift in Sources */,
 				32DB389427F3301A0033C3FA /* Menus.swift in Sources */,
 				32DB387C27F3240C0033C3FA /* AppDelegate.swift in Sources */,
 				32DB387E27F3240C0033C3FA /* SceneDelegate.swift in Sources */,
 				32DB389227F32E260033C3FA /* Menu.swift in Sources */,
-				32DB38A627F4C6010033C3FA /* CollectionTableViewCell.swift in Sources */,
+				32DB38A627F4C6010033C3FA /* MenuSectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

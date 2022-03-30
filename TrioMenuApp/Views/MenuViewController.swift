@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var viewLogoShadow: UIView!
     @IBOutlet weak var tableview: UITableView!
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.register(CollectionTableViewCell.nib(), forCellReuseIdentifier: CollectionTableViewCell.identifier)
+        tableview.register(MenuSectionTableViewCell.nib(), forCellReuseIdentifier: MenuSectionTableViewCell.identifier)
         tableview.delegate = self
         tableview.dataSource = self
         
@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.menuData = menu
             self.tableview.reloadData()
         }
+        
         self.viewLogoShadow.dropShadow()
     }
     
@@ -50,25 +51,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let label = UILabel()
         label.text = menuData?.menus[section].name
         label.font = UIFont(name: "Inter-Bold", size: 36)
+        
+        label.backgroundColor = .white
+        
         return label
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return menuData?.menus.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let menuData = menuData else {
-            return 0
-        }
-        return menuData.menus[section].items.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as! CollectionTableViewCell
-        cell.textLabel?.text = menuData?.menus[indexPath.section].items[indexPath.row].name
+        let cell = tableview.dequeueReusableCell(withIdentifier: MenuSectionTableViewCell.identifier, for: indexPath) as! MenuSectionTableViewCell
+
         if let items = menuData?.menus[indexPath.section].items {
             cell.configure(items: items)
         }
