@@ -1,0 +1,6 @@
+framework module Pods_TrioMenuApp {
+  umbrella header "Pods-TrioMenuApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
