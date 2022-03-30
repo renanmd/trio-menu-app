@@ -18,6 +18,10 @@
 		32DB389427F3301A0033C3FA /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB389327F3301A0033C3FA /* Menus.swift */; };
 		32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389827F4780B0033C3FA /* Inter-Bold.ttf */; };
 		32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389927F4780B0033C3FA /* Inter-Regular.ttf */; };
+		32DB38A227F4C5420033C3FA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */; };
+		32DB38A327F4C5420033C3FA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */; };
+		32DB38A627F4C6010033C3FA /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */; };
+		32DB38A727F4C6010033C3FA /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */; };
 		539FB5B785B7DF336254AE88 /* Pods_TrioMenuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FC941ED9274A8C94F92BFF /* Pods_TrioMenuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		32DB389327F3301A0033C3FA /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
 		32DB389827F4780B0033C3FA /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		32DB389927F4780B0033C3FA /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 		EED0ACF81ABEF2E083568B05 /* Pods-TrioMenuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrioMenuApp.release.xcconfig"; path = "Target Support Files/Pods-TrioMenuApp/Pods-TrioMenuApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +116,10 @@
 			children = (
 				32DB387F27F3240C0033C3FA /* ViewController.swift */,
 				32DB388127F3240C0033C3FA /* Main.storyboard */,
+				32DB38A427F4C6010033C3FA /* CollectionTableViewCell.swift */,
+				32DB38A527F4C6010033C3FA /* CollectionTableViewCell.xib */,
+				32DB38A027F4C5420033C3FA /* CollectionViewCell.swift */,
+				32DB38A127F4C5420033C3FA /* CollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,7 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DB38A727F4C6010033C3FA /* CollectionTableViewCell.xib in Resources */,
 				32DB388827F3240E0033C3FA /* LaunchScreen.storyboard in Resources */,
+				32DB38A327F4C5420033C3FA /* CollectionViewCell.xib in Resources */,
 				32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */,
 				32DB388527F3240E0033C3FA /* Assets.xcassets in Resources */,
 				32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */,
@@ -249,10 +263,12 @@
 			files = (
 				32DB389027F32D9C0033C3FA /* Item.swift in Sources */,
 				32DB388027F3240C0033C3FA /* ViewController.swift in Sources */,
+				32DB38A227F4C5420033C3FA /* CollectionViewCell.swift in Sources */,
 				32DB389427F3301A0033C3FA /* Menus.swift in Sources */,
 				32DB387C27F3240C0033C3FA /* AppDelegate.swift in Sources */,
 				32DB387E27F3240C0033C3FA /* SceneDelegate.swift in Sources */,
 				32DB389227F32E260033C3FA /* Menu.swift in Sources */,
+				32DB38A627F4C6010033C3FA /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
