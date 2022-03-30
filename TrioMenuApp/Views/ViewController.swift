@@ -51,9 +51,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.text = menuData?.menus[section].name
+        label.font = UIFont(name: "Inter-Bold", size: 36)
         return label
     }
-    //This adds sections. Here it is adding a section for each name (6 total) + the 6 items in the array. 24total
     func numberOfSections(in tableView: UITableView) -> Int {
         return menuData?.menus.count ?? 0
     }

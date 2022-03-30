@@ -16,6 +16,8 @@
 		32DB389027F32D9C0033C3FA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB388F27F32D9C0033C3FA /* Item.swift */; };
 		32DB389227F32E260033C3FA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB389127F32E260033C3FA /* Menu.swift */; };
 		32DB389427F3301A0033C3FA /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB389327F3301A0033C3FA /* Menus.swift */; };
+		32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389827F4780B0033C3FA /* Inter-Bold.ttf */; };
+		32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32DB389927F4780B0033C3FA /* Inter-Regular.ttf */; };
 		539FB5B785B7DF336254AE88 /* Pods_TrioMenuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FC941ED9274A8C94F92BFF /* Pods_TrioMenuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		32DB388F27F32D9C0033C3FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		32DB389127F32E260033C3FA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		32DB389327F3301A0033C3FA /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
+		32DB389827F4780B0033C3FA /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		32DB389927F4780B0033C3FA /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		EED0ACF81ABEF2E083568B05 /* Pods-TrioMenuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrioMenuApp.release.xcconfig"; path = "Target Support Files/Pods-TrioMenuApp/Pods-TrioMenuApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,7 @@
 				32DB387D27F3240C0033C3FA /* SceneDelegate.swift */,
 				32DB389627F36CFB0033C3FA /* Views */,
 				32DB389527F36CEC0033C3FA /* Models */,
+				32DB389727F477C80033C3FA /* Resources */,
 				32DB388427F3240E0033C3FA /* Assets.xcassets */,
 				32DB388627F3240E0033C3FA /* LaunchScreen.storyboard */,
 				32DB388927F3240E0033C3FA /* Info.plist */,
@@ -105,6 +110,15 @@
 				32DB388127F3240C0033C3FA /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		32DB389727F477C80033C3FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32DB389827F4780B0033C3FA /* Inter-Bold.ttf */,
+				32DB389927F4780B0033C3FA /* Inter-Regular.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		75E60528718A79C188D96BD6 /* Pods */ = {
@@ -177,7 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DB388827F3240E0033C3FA /* LaunchScreen.storyboard in Resources */,
+				32DB389B27F4780B0033C3FA /* Inter-Regular.ttf in Resources */,
 				32DB388527F3240E0033C3FA /* Assets.xcassets in Resources */,
+				32DB389A27F4780B0033C3FA /* Inter-Bold.ttf in Resources */,
 				32DB388327F3240C0033C3FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
