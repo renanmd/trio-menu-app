@@ -44,16 +44,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = menuData?.menus[section].name
+        return label
+    }
+    //This adds sections. Here it is adding a section for each name (6 total) + the 6 items in the array. 24total
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return menuData?.menus.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let menuData = menuData else {
             return 0
         }
-        return menuData.menus.count
+        return menuData.menus[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = menuData?.menus[indexPath.row].name
+        cell.textLabel?.text = menuData?.menus[indexPath.section].items[indexPath.row].name
         
         return cell
     }
