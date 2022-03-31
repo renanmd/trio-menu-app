@@ -47,7 +47,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 36
+        return 66
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -73,14 +73,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableview.dequeueReusableCell(withIdentifier: MenuSectionTableViewCell.identifier, for: indexPath) as! MenuSectionTableViewCell
 
         if let items = menuData?.menus[indexPath.section].items {
-            cell.configure(items: items)
+            cell.configure(items: items, delegate: self)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250.0
+        return 180.0
     }
 }
 
@@ -93,6 +93,16 @@ extension UIView {
         layer.shadowRadius = 2
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}
+
+extension MenuViewController: MenuSectionTableViewCellDelegate {
+    func didTapItem(item: Item) {
+//        let vc = UIViewController(nibName: "ItemDetailViewController", bundle: nil)
+        let vc = ItemDetailViewController()
+            vc.setUpItems(item: item)
+
+            self.present(vc, animated: true)
     }
 }
 

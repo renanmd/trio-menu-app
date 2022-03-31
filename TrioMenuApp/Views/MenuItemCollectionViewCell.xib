@@ -31,8 +31,8 @@
                                     <constraint firstAttribute="height" constant="100" id="yeJ-aq-EEy"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIN-oW-2zc">
-                                <rect key="frame" x="18" y="122" width="124" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIN-oW-2zc">
+                                <rect key="frame" x="18" y="122" width="124" height="28"/>
                                 <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,8 @@
                             <constraint firstItem="Ym4-1f-S2e" firstAttribute="top" secondItem="7rs-7b-ZRA" secondAttribute="top" id="4VQ-Zv-vIu"/>
                             <constraint firstAttribute="width" constant="160" id="5S6-k3-DyO"/>
                             <constraint firstItem="iIN-oW-2zc" firstAttribute="leading" secondItem="7rs-7b-ZRA" secondAttribute="leading" constant="18" id="DPv-jn-OcE"/>
-                            <constraint firstItem="iIN-oW-2zc" firstAttribute="top" secondItem="Ym4-1f-S2e" secondAttribute="bottom" constant="22" id="ZWY-iw-1dt"/>
+                            <constraint firstAttribute="bottom" secondItem="iIN-oW-2zc" secondAttribute="bottom" constant="10" id="Fiq-pH-ncI"/>
+                            <constraint firstItem="iIN-oW-2zc" firstAttribute="top" relation="lessThanOrEqual" secondItem="Ym4-1f-S2e" secondAttribute="bottom" constant="22" id="ZWY-iw-1dt"/>
                             <constraint firstAttribute="trailing" secondItem="iIN-oW-2zc" secondAttribute="trailing" constant="18" id="uqG-Yk-iON"/>
                             <constraint firstAttribute="height" constant="160" id="utb-Dc-fX8"/>
                             <constraint firstItem="Ym4-1f-S2e" firstAttribute="centerX" secondItem="7rs-7b-ZRA" secondAttribute="centerX" id="vio-oA-ml4"/>

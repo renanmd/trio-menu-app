@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MenuItemCollectionViewCell: UICollectionViewCell {
     
@@ -31,9 +32,10 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         self.imgItem.image = nil
     }
     
-    public func configure(item: Item) {
+    public func configure(item: Item, imageURL: String) {
         self.lblItemName.text = item.name
-        self.imgItem.image = UIImage(named: item.url)
+        let url = URL(string: imageURL)
+        self.imgItem.kf.setImage(with: url)
     }
     
     func configureViewWithBorder() {
