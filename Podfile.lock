@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.5)
-  - SVProgressHUD (2.2.5)
+  - Kingfisher (7.2.0)
+  - Spinners (1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
-  - SVProgressHUD (~> 2.2)
+  - Kingfisher (~> 7.0)
+  - Spinners
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - SVProgressHUD
+    - Kingfisher
+    - Spinners
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  Spinners: b59d4a0fc141ba974f3f9f194ef82b3daf10d059
 
-PODFILE CHECKSUM: 8a69c97e565c20584b47633adfd5efcf2cac09d9
+PODFILE CHECKSUM: 0dc3e751517be9a05e93814b0374dff7962aee05
 
 COCOAPODS: 1.11.2
