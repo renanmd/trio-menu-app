@@ -26,10 +26,12 @@ class MenuSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        collectionView.register(MenuItemCollectionViewCell.nib(), forCellWithReuseIdentifier: MenuItemCollectionViewCell.identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+
+        self.selectionStyle = .none
+
+        self.collectionView.register(MenuItemCollectionViewCell.nib(), forCellWithReuseIdentifier: MenuItemCollectionViewCell.identifier)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
     
     override func prepareForReuse() {
@@ -41,18 +43,19 @@ class MenuSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     func configure(items: [Item], delegate: MenuSectionTableViewCellDelegate) {
         self.items = items
-        collectionView.reloadData()
+        self.collectionView.reloadData()
         self.delegate = delegate
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        items.count
+        self.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCollectionViewCell.identifier, for: indexPath)as! MenuItemCollectionViewCell
         
         cell.configure(item: items[indexPath.row], imageURL: items[indexPath.row].url)
+        
         return cell
     }
     
@@ -61,9 +64,6 @@ class MenuSectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        print("Cell \(indexPath.row) selected")
-        
         self.delegate?.didTapItem(item: items[indexPath.row])
     }
 }

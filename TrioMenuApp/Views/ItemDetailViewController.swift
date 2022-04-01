@@ -14,28 +14,28 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblItemDescription: UILabel!
     
-    var item: Item?
+    public var item: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let item = item else { return }
 
-        setUpViewPriceWithBorder()
-        let url = URL(string: item.url)
-        self.imgItem.kf.setImage(with: url)
-        self.lblItemName.text = item.name
-        self.lblPrice.text = ("$\(item.price)")
-        self.lblItemDescription.text = item.description
+        self.setupUI()
+        self.loadItem()
+    }
+
+    func setupUI() {
+        self.viewPriceWithBorder.layer.borderWidth = 1.0
+        self.viewPriceWithBorder.layer.borderColor = UIColor.black.cgColor
+        self.viewPriceWithBorder.layer.cornerRadius = 15.0
     }
     
-    func setUpViewPriceWithBorder() {
-        self.viewPriceWithBorder.layer.borderWidth = 1
-        self.viewPriceWithBorder.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1).cgColor
-        self.viewPriceWithBorder.layer.cornerRadius = 15
-    }
-    
-    func setUpItems(item: Item) {
-        self.item = item
+    func loadItem() {
+        if let urlString = item?.url, let url = URL(string: urlString) {
+            self.imgItem.kf.setImage(with: url)
+        }
+        
+        self.lblItemName.text = item?.name
+        self.lblPrice.text = ("$\(item?.price ?? 0)")
+        self.lblItemDescription.text = item?.description
     }
 }

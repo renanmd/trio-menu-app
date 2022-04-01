@@ -7,62 +7,80 @@
 
 import UIKit
 import Alamofire
+import Spinners
 
-class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class MenuViewController: UIViewController {
     @IBOutlet weak var viewLogoShadow: UIView!
     @IBOutlet weak var tableview: UITableView!
     
-    var menuData: Menus?
+    private var menus: [Menu] = []
+    private var spinners: Spinners?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.register(MenuSectionTableViewCell.nib(), forCellReuseIdentifier: MenuSectionTableViewCell.identifier)
-        tableview.delegate = self
-        tableview.dataSource = self
-        
-        fetchMenu { menu in
-            guard let menu = menu else {
-                return
-            }
-            self.menuData = menu
-            self.tableview.reloadData()
-        }
-        
+        self.setupTableView()
+        self.setupUI()
+        self.loadData()
+    }
+
+    private func setupUI() {
+        self.spinners = Spinners(type: .cube, with: self)
         self.viewLogoShadow.dropShadow()
     }
     
-    func fetchMenu(completion: @escaping (_ menu: Menus?)->()) {
-        let request = AF.request("https://mcdonalds.trio.dev/menu")
+    private func loadData() {
+        self.spinners?.present()
         
-        request.responseDecodable(of: Menus.self) { (response) in
-            guard let menus = response.value else {
-                completion(nil)
-                return
+        McDonaldsService.shared.fetchMenus { [weak self] menus in
+            DispatchQueue.main.async {
+                self?.spinners?.dismiss()
+                guard let menus = menus else {
+                    return
+                }
+                
+                self?.menus = menus
+                
+                self?.tableview.reloadData()
             }
-            completion(menus)
-            self.menuData = menus
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 66
+    private func setupTableView() {
+        self.tableview.register(MenuSectionTableViewCell.nib(), forCellReuseIdentifier: MenuSectionTableViewCell.identifier)
+        
+        self.tableview.delegate = self
+        self.tableview.dataSource = self
+        
+        self.tableview.sectionHeaderHeight = UITableView.automaticDimension
+        self.tableview.estimatedSectionHeaderHeight = 66.0
+    }
+}
+
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UITableViewHeaderFooterView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.contentView.backgroundColor = .white
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.text = self.menus[section].name
+        label.font = UIFont(name: "Inter-Bold", size: 36.0)
+        
+        headerView.contentView.addSubview(label)
+        label.leadingAnchor.constraint(equalTo: headerView.contentView.leadingAnchor, constant: 12.0).isActive = true
+        label.trailingAnchor.constraint(equalTo: headerView.contentView.trailingAnchor, constant: -12.0).isActive = true
+        label.topAnchor.constraint(equalTo: headerView.contentView.topAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: headerView.contentView.bottomAnchor).isActive = true
+        
+        return headerView
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let label = UILabel()
-        label.text = menuData?.menus[section].name
-        label.font = UIFont(name: "Inter-Bold", size: 36)
-        
-        label.backgroundColor = .white
-        
-        return label
-        
-    }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return menuData?.menus.count ?? 0
+        return self.menus.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,10 +90,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: MenuSectionTableViewCell.identifier, for: indexPath) as! MenuSectionTableViewCell
 
-        if let items = menuData?.menus[indexPath.section].items {
-            cell.configure(items: items, delegate: self)
-        }
-        
+        let items = self.menus[indexPath.section].items
+        cell.configure(items: items, delegate: self)
+
         return cell
     }
     
@@ -84,25 +101,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 }
 
-extension UIView {
-    func dropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-}
-
 extension MenuViewController: MenuSectionTableViewCellDelegate {
     func didTapItem(item: Item) {
-//        let vc = UIViewController(nibName: "ItemDetailViewController", bundle: nil)
-        let vc = ItemDetailViewController()
-            vc.setUpItems(item: item)
-
-            self.present(vc, animated: true)
+        let itemDetailViewController = ItemDetailViewController()
+        itemDetailViewController.item = item
+        
+        self.present(itemDetailViewController, animated: true)
     }
 }
 

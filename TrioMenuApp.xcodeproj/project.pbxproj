@@ -24,6 +24,8 @@
 		32DB38A727F4C6010033C3FA /* MenuSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */; };
 		32DB38AE27F5ED540033C3FA /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38AC27F5ED540033C3FA /* ItemDetailViewController.swift */; };
 		32DB38AF27F5ED540033C3FA /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DB38AD27F5ED540033C3FA /* ItemDetailViewController.xib */; };
+		32DB38B227F788C10033C3FA /* McDonaldsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38B127F788C10033C3FA /* McDonaldsService.swift */; };
+		32DB38B527F78DE70033C3FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB38B427F78DE70033C3FA /* Extensions.swift */; };
 		539FB5B785B7DF336254AE88 /* Pods_TrioMenuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FC941ED9274A8C94F92BFF /* Pods_TrioMenuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionTableViewCell.xib; sourceTree = "<group>"; };
 		32DB38AC27F5ED540033C3FA /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		32DB38AD27F5ED540033C3FA /* ItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
+		32DB38B127F788C10033C3FA /* McDonaldsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = McDonaldsService.swift; sourceTree = "<group>"; };
+		32DB38B427F78DE70033C3FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EED0ACF81ABEF2E083568B05 /* Pods-TrioMenuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrioMenuApp.release.xcconfig"; path = "Target Support Files/Pods-TrioMenuApp/Pods-TrioMenuApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,14 +97,15 @@
 		32DB387A27F3240C0033C3FA /* TrioMenuApp */ = {
 			isa = PBXGroup;
 			children = (
+				32DB388927F3240E0033C3FA /* Info.plist */,
 				32DB387B27F3240C0033C3FA /* AppDelegate.swift */,
 				32DB387D27F3240C0033C3FA /* SceneDelegate.swift */,
-				32DB389627F36CFB0033C3FA /* Views */,
-				32DB389527F36CEC0033C3FA /* Models */,
-				32DB389727F477C80033C3FA /* Resources */,
 				32DB388427F3240E0033C3FA /* Assets.xcassets */,
 				32DB388627F3240E0033C3FA /* LaunchScreen.storyboard */,
-				32DB388927F3240E0033C3FA /* Info.plist */,
+				32DB389727F477C80033C3FA /* Resources */,
+				32DB38B027F7889F0033C3FA /* Service */,
+				32DB38B327F78DCE0033C3FA /* Utils */,
+				32DB389627F36CFB0033C3FA /* Views */,
 			);
 			path = TrioMenuApp;
 			sourceTree = "<group>";
@@ -118,14 +123,14 @@
 		32DB389627F36CFB0033C3FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32DB387F27F3240C0033C3FA /* MenuViewController.swift */,
 				32DB388127F3240C0033C3FA /* Main.storyboard */,
-				32DB38A427F4C6010033C3FA /* MenuSectionTableViewCell.swift */,
-				32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */,
-				32DB38A027F4C5420033C3FA /* MenuItemCollectionViewCell.swift */,
-				32DB38A127F4C5420033C3FA /* MenuItemCollectionViewCell.xib */,
+				32DB387F27F3240C0033C3FA /* MenuViewController.swift */,
 				32DB38AC27F5ED540033C3FA /* ItemDetailViewController.swift */,
 				32DB38AD27F5ED540033C3FA /* ItemDetailViewController.xib */,
+				32DB38A027F4C5420033C3FA /* MenuItemCollectionViewCell.swift */,
+				32DB38A127F4C5420033C3FA /* MenuItemCollectionViewCell.xib */,
+				32DB38A427F4C6010033C3FA /* MenuSectionTableViewCell.swift */,
+				32DB38A527F4C6010033C3FA /* MenuSectionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +142,23 @@
 				32DB389927F4780B0033C3FA /* Inter-Regular.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		32DB38B027F7889F0033C3FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				32DB38B127F788C10033C3FA /* McDonaldsService.swift */,
+				32DB389527F36CEC0033C3FA /* Models */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		32DB38B327F78DCE0033C3FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32DB38B427F78DE70033C3FA /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		75E60528718A79C188D96BD6 /* Pods */ = {
@@ -276,6 +298,8 @@
 				32DB387C27F3240C0033C3FA /* AppDelegate.swift in Sources */,
 				32DB387E27F3240C0033C3FA /* SceneDelegate.swift in Sources */,
 				32DB389227F32E260033C3FA /* Menu.swift in Sources */,
+				32DB38B227F788C10033C3FA /* McDonaldsService.swift in Sources */,
+				32DB38B527F78DE70033C3FA /* Extensions.swift in Sources */,
 				32DB38A627F4C6010033C3FA /* MenuSectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
